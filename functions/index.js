@@ -4,7 +4,7 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 const firestore = admin.firestore();
 
-const getAvatar = async (req, res) => {
+exports.getAvatar = async (req, res) => {
   try {
     const snapshot = await firestore.collection("avatars").get();
     const data = snapshot.docs.map((doc) => doc.data());
